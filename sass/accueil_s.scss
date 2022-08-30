@@ -8,18 +8,35 @@ $color-tertiary: #99E2D0;
    font-family: Roboto, sans-serif;
    list-style: none;
    box-sizing: border-box;
+   margin: 0;
 }
 
 // Header
 
 header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
    position: relative;
    height: 70px;
    box-shadow: 2px 2px 10px lightgray;
 
    .logo {
       height: 30px;
-      margin-left: 30%;
-      margin-top: 20px;
    }
 }
+
+
+
+// Lieu
+
+#search {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 50px;
+   background-color: #eaeaea;
+   gap: 15px;
+   font-size: 18px;
+}
+
