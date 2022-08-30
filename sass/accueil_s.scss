@@ -40,3 +40,57 @@ header {
    font-size: 18px;
 }
 
+
+
+
+
+
+// Choix
+
+#choose {
+   background-color: #f6f6f6;
+   padding-top: 40px;
+   padding-bottom: 60px;
+
+   h1 {
+      max-width: 60%;
+      margin: auto;
+      text-align: center;
+      font-size: 23px;
+      font-weight: 700;
+      padding-bottom: 10px;
+   }
+
+   h1+p {
+      font-size: 16px;
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      padding-bottom: 30px;
+      font-weight: 300;
+      font-size: 18px;
+   }
+
+   .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      max-width: 220px;
+      background: linear-gradient($color-secondary, $color-primary);
+      border-radius: 60px;
+      border: none;
+      box-shadow: 2px 2px 20px lightgray;
+      padding: 16px 23px;
+
+      .btn__explore {
+         font-size: 15px;
+         color: white;
+         }
+   }
+
+   .btn:hover {
+      box-shadow: 2px 2px 20px gray;
+      background: linear-gradient(#ff8ddf, #9a62de);
+   }
+}
