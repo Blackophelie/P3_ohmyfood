@@ -125,4 +125,108 @@ header .logo {
   font-weight: 500;
 }
 
+.list {
+  background-color: rgb(246, 246, 246);
+  padding: 60px 20px;
+}
+.list h2 {
+  margin-left: 20px;
+}
+.list .restaurants {
+  max-width: 767px;
+  margin-top: 25px;
+}
+.list .restaurants a {
+  text-decoration: none;
+  color: black;
+}
+.list .card__legend {
+  display: flex;
+}
+.list .card {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 2px 2px 20px lightgray;
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 200ms;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.list .card .card__img {
+  object-fit: cover;
+  height: 175px;
+  width: 100%;
+  object-position: center;
+}
+.list .card .card__img img {
+  border-radius: 25px 25px 0px 0px;
+}
+.list .card .card__new {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  background-color: #99E2D0;
+  color: rgb(30, 153, 120);
+  border-radius: 3px;
+  width: 80px;
+  height: 30px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 6px;
+}
+.list .card .card__name {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 0 5px 16px;
+}
+.list .card .card__city {
+  padding-left: 16px;
+}
+.list .card .card__heart .fa-regular {
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
+  font-size: 25px;
+  visibility: visible;
+  transition-property: visibility;
+  transition-duration: 200ms;
+}
+.list .card .card__heart .fa-solid {
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
+  font-size: 25px;
+  color: transparent;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  scale: 0;
+  visibility: hidden;
+  transition-property: visibility scale;
+  transition-duration: 200ms;
+}
+.list .card .card__heart:hover .fa-regular {
+  visibility: hidden;
+  transition-property: visibility scale;
+  transition-duration: 200ms;
+}
+.list .card .card__heart:hover .fa-solid {
+  visibility: visible;
+  scale: 100%;
+  transition-property: visibility scale;
+  transition-duration: 200ms;
+}
+.list .card:hover {
+  box-shadow: 2px 2px 20px grey;
+  transform: scale(1.04);
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+
 /*# sourceMappingURL=accueil_s.css.map */
