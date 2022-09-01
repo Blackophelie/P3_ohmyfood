@@ -33,6 +33,16 @@
    justify-content: center;
 }
 
+@mixin transform {
+   transition-property: transform;
+   transition-duration: 200ms;
+}
+
+@mixin visibility {
+   transition-property: visibility scale;
+   transition-duration: 200ms;
+}
+
 @mixin footer {
    display: block;
    background-color: colors.$color-bg;

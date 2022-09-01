@@ -90,6 +90,9 @@ header {
       border: none;
       box-shadow: 2px 2px 20px colors.$shadow;
       padding: 16px 23px;
+      cursor: pointer;
+      transform: scale(1);
+      @include mixins.transform;
       @include mixins.center;
 
       .btn__explore {
@@ -100,7 +103,12 @@ header {
 
    .btn:hover {
       box-shadow: 2px 2px 20px colors.$dark-shadow;
-      background: linear-gradient(colors.$color-secondary, colors.$color-primary);
+      background: colors.$gradient;
+      opacity: 0.8;
+      scale: 1.05;
+      cursor: pointer;
+      transform: scale, opacity;
+      @include mixins.transform;
    }
 }
 
@@ -160,10 +168,12 @@ header {
          padding: 5px 5px 0px 5px;
          z-index: 2;
          margin-left: -15px;
+         
       }
 
       li:hover {
          background-color: colors.$selection;
+         cursor: pointer;
 
          i {
             color: colors.$color-primary;
@@ -225,8 +235,7 @@ header {
       height: 250px;
       cursor: pointer;
       transform: scale(1);
-      transition-property: transform;
-      transition-duration: 200ms;
+      @include mixins.transform;
       border-radius: 25px;
       overflow: hidden;
 
@@ -289,23 +298,20 @@ header {
             -webkit-background-clip: text;
             scale: 0;
             visibility: hidden;
-            transition-property: visibility scale;
-            transition-duration: 200ms;
+            @include mixins.visibility;
          }
       }
 
       .card__heart:hover {
          .fa-regular {
             visibility: hidden;
-            transition-property: visibility scale;
-            transition-duration: 200ms;
+            @include mixins.visibility;
          }
 
          .fa-solid {
             visibility: visible;
             scale: calc(100%);
-            transition-property: visibility scale;
-            transition-duration: 200ms;
+            @include mixins.visibility;
          }
       }
    }
@@ -313,8 +319,7 @@ header {
    .card:hover {
       box-shadow: 2px 2px 20px colors.$dark-shadow;
       transform: scale(1.04);
-      transition-property: transform;
-      transition-duration: 200ms;
+      @include mixins.visibility;
    }
 
 }
