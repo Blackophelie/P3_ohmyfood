@@ -1,0 +1,58 @@
+@use "colors.scss";
+@use "typo.scss";
+
+
+.steps {
+   margin: 0;
+   padding-left: 20px;
+   counter-reset: number;
+
+   li {
+      display: flex;
+      align-items: baseline;
+      text-align: center;
+      height: 80px;
+      border-radius: 25px;
+      background-color: colors.$bg-choice;
+      box-shadow: 2px 2px 20px colors.$shadow;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 30px;
+      cursor: pointer;
+   }
+
+   li::before {
+      content: counter(number);
+      counter-increment: number;
+      color: white;
+      width: 20px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: colors.$color-primary;
+      font: 500 16px typo.$font-primary;
+      padding: 5px 5px 0px 5px;
+      z-index: 2;
+      margin-left: -15px;
+
+   }
+
+   li:hover {
+      background-color: colors.$selection;
+
+      i {
+         color: colors.$color-primary;
+      }
+   }
+
+
+   i {
+      margin: 25px;
+      color: colors.$dark-shadow;
+      font-size: 22px;
+   }
+
+   p {
+      font-size: 16px;
+      font-weight: 500;
+   }
+}

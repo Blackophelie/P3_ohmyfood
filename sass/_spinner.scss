@@ -1,0 +1,39 @@
+@use "colors.scss";
+@use "typo.scss";
+@use "mixins.scss";
+
+.spinner {
+   .spin {
+   position: fixed;
+   background-color: colors.$color-secondary;
+   height: 100%;
+   inset: 0;
+   z-index: 99;
+   opacity: 0.9;
+   animation: disappear 2s forwards;
+   transform-origin: top;
+}
+
+@keyframes disappear {
+   to {
+      transform: scale(0);
+   }
+}
+
+div {
+   width: 20px;
+   height: 20px;
+   background: colors.$color-primary;
+   animation: spin 1s cubic-bezier(.19, .57, .3, .98) infinite alternate;
+}
+}
+
+@keyframes spin {
+   from {
+      transform: translateY(0);
+
+      to {
+         transform: translateY(-100px);
+      }
+   }
+}
