@@ -19,13 +19,13 @@ header .logo {
 }
 
 #search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 50px;
   background-color: #eaeaea;
   gap: 15px;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #choose {
@@ -51,24 +51,24 @@ header .logo {
   font-size: 18px;
 }
 #choose .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
   max-width: 220px;
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 60px;
   border: none;
-  box-shadow: 2px 2px 20px lightgray;
+  box-shadow: 2px 2px 20px #d3d3d3;
   padding: 16px 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #choose .btn .btn__explore {
   font-size: 15px;
-  color: white;
+  color: #ffffff;
 }
 #choose .btn:hover {
-  box-shadow: 2px 2px 20px gray;
-  background: linear-gradient(#ff8ddf, #9a62de);
+  box-shadow: 2px 2px 20px #bababa;
+  background: linear-gradient(#FF79DA, #9356DC);
 }
 
 .select {
@@ -90,8 +90,8 @@ header .logo {
   text-align: center;
   height: 80px;
   border-radius: 25px;
-  background-color: rgb(246, 246, 246);
-  box-shadow: 2px 2px 20px lightgray;
+  background-color: #f6f6f6;
+  box-shadow: 2px 2px 20px #d3d3d3;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 30px;
@@ -99,12 +99,12 @@ header .logo {
 .select ol li::before {
   content: counter(number);
   counter-increment: number;
-  color: white;
+  color: #ffffff;
   width: 20px;
   height: 25px;
   border-radius: 50%;
   background-color: #9356DC;
-  font: 500 16px "Roboto";
+  font: 500 16px Roboto, sans-serif;
   padding: 5px 5px 0px 5px;
   z-index: 2;
   margin-left: -15px;
@@ -117,7 +117,7 @@ header .logo {
 }
 .select .step i {
   margin: 25px;
-  color: gray;
+  color: #bababa;
   font-size: 22px;
 }
 .select li p {
@@ -126,7 +126,7 @@ header .logo {
 }
 
 .list {
-  background-color: rgb(246, 246, 246);
+  background-color: #f6f6f6;
   padding: 60px 20px;
 }
 .list h2 {
@@ -138,7 +138,7 @@ header .logo {
 }
 .list .restaurants a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 .list .card__legend {
   display: flex;
@@ -146,8 +146,8 @@ header .logo {
 .list .card {
   display: inline-block;
   margin-bottom: 20px;
-  background-color: white;
-  box-shadow: 2px 2px 20px lightgray;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 20px #d3d3d3;
   width: 100%;
   height: 250px;
   cursor: pointer;
@@ -171,14 +171,14 @@ header .logo {
   top: 20px;
   right: 20px;
   z-index: 2;
-  background-color: #99E2D0;
-  color: rgb(30, 153, 120);
   border-radius: 3px;
   width: 80px;
   height: 30px;
   font-weight: 700;
   text-align: center;
   padding-top: 6px;
+  background-color: #99E2D0;
+  color: #299077;
 }
 .list .card .card__name {
   font-size: 18px;
@@ -223,7 +223,7 @@ header .logo {
   transition-duration: 200ms;
 }
 .list .card:hover {
-  box-shadow: 2px 2px 20px grey;
+  box-shadow: 2px 2px 20px #bababa;
   transform: scale(1.04);
   transition-property: transform;
   transition-duration: 200ms;
@@ -232,7 +232,7 @@ header .logo {
 footer {
   display: block;
   background-color: #353535;
-  color: white;
+  color: #ffffff;
   padding: 26px 0 34px 24px;
   margin: 0;
 }

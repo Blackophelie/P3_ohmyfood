@@ -1,0 +1,107 @@
+@use "../sass/colors";
+@use "../sass/typo.scss";
+
+
+@mixin header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   height: 70px;
+   box-shadow: 2px 2px 10px lightgray;
+
+   .logo {
+      height: 30px;
+   }
+}
+
+@mixin basics {
+   font-family: typo.$typo-text;
+   list-style: none;
+   box-sizing: border-box;
+   margin: 0;
+}
+
+@mixin new {
+   background-color: colors.$color-tertiary;
+   color: darken(colors.$color-tertiary, 38%);
+}
+
+@mixin center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin footer {
+   display: block;
+   background-color: colors.$color-bg;
+   color: colors.$white;
+   padding: 26px 0 34px 24px;
+   margin: 0;
+
+   h3 {
+      font-family: typo.$typo-title;
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 20px;
+   }
+
+   ul {
+      padding: 0;
+
+      li {
+         display: flex;
+         padding: 5px;
+         font-weight: 400;
+
+         i {
+            width: 15px;
+            margin-right: 15px;
+         }
+      }
+   }
+
+   a {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+   }
+}
+
+// @mixin spinner {
+//    .spin {
+//    position: fixed;
+//    background-color: colors.$color-secondary;
+//    height: 100%;
+//    inset: 0;
+//    z-index: 99;
+//    opacity: 0.9;
+//    animation: disappear 2s forwards;
+//    transform-origin: top;
+// }
+
+// @keyframes disappear {
+//    to {
+//       transform: scale(0);
+//    }
+// }
+
+// div {
+//    width: 20px;
+//    height: 20px;
+//    background: colors.$color-primary;
+//    animation: spin 1s cubic-bezier(.19, .57, .3, .98) infinite alternate;
+// }
+// }
+
+// @keyframes spin {
+//    from {
+//       transform: translateY(0);
+
+//       to {
+//          transform: translateY(-100px);
+//       }
+//    }
+// }
+// }
