@@ -1,0 +1,29 @@
+@use "colors.scss";
+@use "typo.scss";
+@use "mixins.scss";
+@use "spinner.scss";
+@use "header.scss";
+@use "button.scss";
+@use "steps.scss";
+@use "card.scss";
+@use "footer.scss";
+
+
+
+.card__img {
+   height: 514px;
+   width: auto;
+}
+
+.menu {
+   background-color: lightgray;
+   padding-top: 60px;
+   padding-bottom: 160px;
+
+   h1 {
+      font-family: 'Shrikhand', cursive;
+   }
+}
+
+
+button {}

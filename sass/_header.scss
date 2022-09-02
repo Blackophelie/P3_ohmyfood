@@ -10,7 +10,15 @@ header {
       height: 30px;
    }
 
-   .btn {
+   button {
+      position: absolute;
+      top: 24px;
+      left: 22px;
+      border: none;
+      background-color: transparent;
 
+      i {
+         font-size: 20px;
+      }
    }
 }
