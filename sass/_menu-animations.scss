@@ -1,0 +1,30 @@
+@use "colors.scss";
+
+@keyframes menu-appear {
+      0% {
+         transform: translateY(50%);
+         opacity: 0;
+      }
+      100% {
+         transform: translateY(0);
+         opacity: 1;
+      }
+   }
+
+@keyframes check-appear {
+   0% {
+      transform: translateX(0%);
+   }
+   100% {
+      transform: translateX(-100%)
+   }
+}
+
+@keyframes check-rotate {
+   0% {
+      rotate: 180deg;
+   }
+   100% {
+      rotate: 0deg;
+   }
+}

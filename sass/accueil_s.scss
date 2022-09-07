@@ -1,12 +1,13 @@
+@use "button.scss";
+@use "card.scss";
 @use "colors.scss";
-@use "typo.scss";
+@use "footer.scss";
+@use "header.scss";
+@use "heart-animation.scss";
 @use "mixins.scss";
 @use "spinner.scss";
-@use "header.scss";
-@use "button.scss";
 @use "steps.scss";
-@use "card.scss";
-@use "footer.scss";
+@use "typo.scss";
 
 // Lieu
 
@@ -79,7 +80,5 @@
       }
    }
 
-
-
    
-   }
+}

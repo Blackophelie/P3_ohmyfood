@@ -1,90 +1,153 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-.spinner {
+button {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  background-color: #ffe9f9;
-  inset: 0;
-  z-index: 99;
+  margin: auto;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 60px;
+  border: none;
+  box-shadow: 2px 2px 20px #d3d3d3;
+  padding: 16px 23px;
+  cursor: pointer;
+  transition-property: transform, scale;
+  transition-duration: 500ms;
 }
-.spinner .spin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 150px;
+button .btn {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
 }
-.spinner .ring {
-  position: absolute;
-  transform-origin: center;
-  border-radius: 50%;
-  border: 4px solid transparent;
-  rotate: 40deg;
-}
-.spinner .ring:nth-child(1) {
-  width: 150px;
-  height: 150px;
-  top: -10px;
-  left: 200px;
-  border-top: 4px solid #FF79DA;
-  border-left: 4px solid #FF79DA;
-}
-.spinner .ring:nth-child(2) {
-  width: 100px;
-  height: 150px;
-  top: -10px;
-  right: 200px;
-  border-top: 4px solid #FF79DA;
-  border-left: 4px solid #FF79DA;
-}
-.spinner .ring:nth-child(3) {
-  width: 150px;
-  height: 150px;
-  left: 190px;
-  border-top: 4px solid #99E2D0;
-  border-left: 4px solid #99E2D0;
-}
-.spinner .ring:nth-child(4) {
-  width: 150px;
-  height: 150px;
-  right: 190px;
-  border-top: 4px solid #99E2D0;
-  border-left: 4px solid #99E2D0;
-}
-.spinner i {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  font-size: 50px;
-  background-color: #ffe9f9;
-  color: #9356DC;
-  rotate: -40deg;
-}
-.spinner #start {
-  font-size: 70px;
-  right: 160px;
-  top: 40px;
-  rotate: 0deg;
+button:hover {
+  box-shadow: 2px 2px 20px #a0a0a0;
+  background: #FF79DA;
+  scale: 1.05;
+  transform: scale, background-image;
+  transition-property: transform, scale;
+  transition-duration: 500ms;
 }
 
-@keyframes large {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
+.card__heart {
+  cursor: pointer;
 }
-@keyframes small {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-180deg);
-  }
+.card__heart .fa-regular {
+  position: absolute;
+  top: 196px;
+  right: 25px;
+  font-size: 25px;
+  visibility: visible;
+  transition: visibility 500ms;
 }
+.card__heart .fa-solid {
+  position: absolute;
+  top: 196px;
+  right: 25px;
+  font-size: 25px;
+  color: transparent;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  scale: 0;
+  visibility: hidden;
+  transition-property: visibility, scale;
+  transition-duration: 500ms;
+}
+.card__heart:hover .fa-regular {
+  transition: visibility 500ms;
+  visibility: hidden;
+}
+.card__heart:hover .fa-solid {
+  transition-property: visibility, scale;
+  transition-duration: 500ms;
+  visibility: visible;
+  scale: 1;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 2px 2px 20px #d3d3d3;
+  border-radius: 25px;
+  overflow: hidden;
+  transition-property: transform;
+  transition-duration: 500ms;
+}
+.card:hover {
+  box-shadow: 2px 2px 20px #a0a0a0;
+  transform: scale(1.02);
+}
+.card__legend {
+  display: flex;
+}
+.card__img {
+  height: 175px;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 25px 25px 0px 0px;
+}
+.card__new {
+  background-color: #99E2D0;
+  color: #299077;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 80px;
+  height: 30px;
+  padding-top: 6px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+.card__name {
+  padding: 10px 0 5px 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__city {
+  padding-left: 16px;
+}
+
+footer {
+  display: block;
+  background-color: #353535;
+  color: white;
+  padding: 26px 0 34px 24px;
+  margin: 0;
+}
+footer h3 {
+  font-family: Shrikhand, cursive;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+footer ul {
+  padding: 0;
+}
+footer ul li {
+  display: flex;
+  padding: 5px;
+  font-weight: 400;
+}
+footer ul li i {
+  width: 15px;
+  margin-right: 15px;
+}
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+footer a:hover {
+  color: #9356DC;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -96,45 +159,44 @@ header {
 header .logo {
   height: 30px;
 }
-header button {
+header .header__btn {
   position: absolute;
   top: 24px;
   left: 22px;
   border: none;
   background-color: transparent;
 }
-header button i {
+header .header__btn i {
   font-size: 20px;
+  color: black;
 }
 
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  max-width: 220px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  border-radius: 60px;
-  border: none;
-  box-shadow: 2px 2px 20px #d3d3d3;
-  padding: 16px 23px;
-  cursor: pointer;
-  transition-property: transform, scale;
-  transition-duration: 500ms;
+@keyframes menu-appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-.btn__explore {
-  font-size: 15px;
-  color: white;
+@keyframes check-appear {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-.btn:hover {
-  box-shadow: 2px 2px 20px #a0a0a0;
-  background: #FF79DA;
-  scale: 1.05;
-  transform: scale, background-image;
-  transition-property: transform, scale;
-  transition-duration: 500ms;
+@keyframes check-rotate {
+  0% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
 }
-
 .steps {
   margin: 0;
   padding-left: 20px;
@@ -182,139 +244,129 @@ header button i {
   font-weight: 500;
 }
 
-.card {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 20px;
-  width: 100%;
-  height: 250px;
-  cursor: pointer;
-  background-color: white;
-  box-shadow: 2px 2px 20px #d3d3d3;
-  border-radius: 25px;
-  overflow: hidden;
-  transition-property: transform;
-  transition-duration: 300ms;
+main {
+  background-color: #f6f6f6;
+  padding-bottom: 60px;
 }
-.card:hover {
-  transition-property: visibility scale;
-  transition-duration: 300ms;
-  box-shadow: 2px 2px 20px #a0a0a0;
-  transform: scale(1.02);
-}
-.card__legend {
-  display: flex;
-}
-.card__img {
-  height: 175px;
-  width: 100%;
+
+.menu__img {
   object-fit: cover;
-  object-position: bottom;
-  border-radius: 25px 25px 0px 0px;
-}
-.card__new {
-  background-color: #99E2D0;
-  color: #299077;
-  position: absolute;
-  text-align: center;
-  top: 20px;
-  right: 20px;
-  z-index: 2;
-  width: 80px;
-  height: 30px;
-  padding-top: 6px;
-  font-weight: 700;
-  border-radius: 3px;
-}
-.card__name {
-  padding: 10px 0 5px 16px;
-  font-size: 18px;
-  font-weight: 700;
-}
-.card__city {
-  padding-left: 16px;
-}
-.card__heart .fa-regular {
-  position: absolute;
-  bottom: 30px;
-  right: 25px;
-  font-size: 25px;
-  visibility: visible;
-  transition-property: visibility;
-  transition-duration: 500ms;
-}
-.card__heart .fa-solid {
-  position: absolute;
-  bottom: 30px;
-  right: 25px;
-  font-size: 25px;
-  color: transparent;
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  scale: 0;
-  visibility: hidden;
-  transition-property: visibility, scale;
-  transition-duration: 500ms;
-}
-.card__heart:hover .fa-regular {
-  transition-property: visibility;
-  transition-duration: 500ms;
-  visibility: hidden;
-}
-.card__heart:hover .fa-solid {
-  transition-property: visibility, scale;
-  transition-duration: 500ms;
-  visibility: visible;
-  scale: 1;
+  width: 100%;
+  height: 270px;
 }
 
-footer {
-  display: block;
-  background-color: #353535;
-  color: white;
-  padding: 26px 0 34px 24px;
-  margin: 0;
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 26px;
+  margin-left: 22px;
+  margin-top: 32px;
 }
-footer h3 {
-  font-family: Shrikhand, cursive;
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 20px;
+h1 .card__heart .fa-regular {
+  top: 35px;
 }
-footer ul {
-  padding: 0;
+h1 .card__heart .fa-solid {
+  top: 35px;
 }
-footer ul li {
-  display: flex;
-  padding: 5px;
-  font-weight: 400;
+h1 .card__heart:hover .fa-regular {
+  top: 35px;
 }
-footer ul li i {
-  width: 15px;
-  margin-right: 15px;
-}
-footer a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-footer a:hover {
-  color: #9356DC;
-}
-
-.card__img {
-  height: 514px;
-  width: auto;
+h1 .card__heart:hover .fa-solid {
+  top: 35px;
 }
 
 .menu {
-  background-color: lightgray;
-  padding-top: 60px;
-  padding-bottom: 160px;
+  z-index: 1;
+  position: relative;
+  top: -50px;
+  background-color: #f6f6f6;
+  border-radius: 25px 25px 0 0;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
-.menu h1 {
-  font-family: "Shrikhand", cursive;
+.menu h2 {
+  text-transform: uppercase;
+  margin: 30px 0 12px 0px;
+}
+.menu h2 span {
+  border-bottom: 2px solid #99E2D0;
+  padding-bottom: 5px;
+}
+
+.menu__plat {
+  margin: 0 14px;
+}
+.menu__plat ul {
+  padding: 0;
+}
+.menu__plat li {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 15px #d3d3d3;
+  cursor: pointer;
+  overflow: hidden;
+  animation: menu-appear 1s;
+}
+.menu__plat li:hover .price-check {
+  animation: check-appear 500ms forwards;
+}
+.menu__plat li:hover .price-check i {
+  animation: check-rotate 500ms forwards;
+}
+
+.price-check {
+  display: flex;
+}
+.price-check .menu__price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-weight: 700;
+  padding: 0 22px 12px 12px;
+}
+.price-check .menu__confirm {
+  background-color: #99E2D0;
+  width: 58px;
+  height: 70px;
+  border-radius: 0 15px 15px 0;
+  padding: 25px 17px;
+  margin-right: -60px;
+}
+.price-check .menu__confirm i {
+  width: 22px;
+  height: 22px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: white;
+  color: #99E2D0;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 12px 0 5px 12px;
+}
+
+h4 {
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 0 5px 12px;
+}
+
+.libelle {
+  min-width: 290px;
+}
+
+button .btn {
+  min-width: 190px;
+  padding: 5px 0;
 }
 
 /*# sourceMappingURL=restau_s.css.map */

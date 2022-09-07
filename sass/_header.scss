@@ -10,7 +10,7 @@ header {
       height: 30px;
    }
 
-   button {
+   .header__btn {
       position: absolute;
       top: 24px;
       left: 22px;
@@ -19,6 +19,7 @@ header {
 
       i {
          font-size: 20px;
+         color: black;
       }
    }
 }

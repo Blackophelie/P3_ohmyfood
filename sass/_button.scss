@@ -2,10 +2,9 @@
 @use "typo.scss";
 @use "mixins.scss";
 
-.btn {
+button {
    @include mixins.center;
    margin: auto;
-   max-width: 220px;
    background: linear-gradient(colors.$color-secondary, colors.$color-primary);
    border-radius: 60px;
    border: none;
@@ -15,9 +14,10 @@
    transition-property: transform, scale;
    transition-duration: 500ms;
 
-   &__explore {
-      font-size: 15px;
+   .btn {
+      font-size: 18px;
       color: white;
+      font-weight: 500;
    }
 
    &:hover {

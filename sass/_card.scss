@@ -1,5 +1,6 @@
 @use "colors.scss";
 @use "mixins.scss";
+@use "heart-animation.scss";
 
 .card {
    display: inline-block;
@@ -13,11 +14,9 @@
    border-radius: 25px;
    overflow: hidden;
    transition-property: transform;
-   transition-duration: 300ms;
+   transition-duration: 500ms;
 
    &:hover {
-      transition-property: visibility scale;
-      transition-duration: 300ms;
       box-shadow: 2px 2px 20px colors.$dark-shadow;
       transform: scale(1.02);
    }
@@ -30,7 +29,7 @@
       height: 175px;
       width: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: bottom;
       border-radius: 25px 25px 0px 0px;
    }
 
@@ -56,49 +55,5 @@
 
    &__city {
       padding-left: 16px;
-   }
-
-
-   &__heart {
-
-      .fa-regular {
-         position: absolute;
-         bottom: 30px;
-         right: 25px;
-         font-size: 25px;
-         visibility: visible;
-         transition-property: visibility;
-         transition-duration: 500ms;
-      }
-
-      .fa-solid {
-         position: absolute;
-         bottom: 30px;
-         right: 25px;
-         font-size: 25px;
-         color: transparent;
-         background-image: colors.$gradient;
-         background-clip: text;
-         -webkit-background-clip: text;
-         scale: 0;
-         visibility: hidden;
-         transition-property: visibility, scale;
-         transition-duration: 500ms;
-      }
-   }
-
-   &__heart:hover {
-      .fa-regular {
-         transition-property: visibility;
-         transition-duration: 500ms;
-         visibility: hidden;
-      }
-
-      .fa-solid {
-         transition-property: visibility, scale;
-         transition-duration: 500ms;
-         visibility: visible;
-         scale: 1;
-      }
    }
 }

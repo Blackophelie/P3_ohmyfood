@@ -1,29 +1,157 @@
+@use "button.scss";
+@use "card.scss";
 @use "colors.scss";
-@use "typo.scss";
+@use "footer.scss";
+@use "header.scss";
+@use "heart-animation.scss";
+@use "menu-animations.scss";
 @use "mixins.scss";
 @use "spinner.scss";
-@use "header.scss";
-@use "button.scss";
 @use "steps.scss";
-@use "card.scss";
-@use "footer.scss";
+@use "typo.scss";
 
 
-
-.card__img {
-   height: 514px;
-   width: auto;
+main {
+   background-color: colors.$bg-choice;
+   padding-bottom: 60px;
 }
 
-.menu {
-   background-color: lightgray;
-   padding-top: 60px;
-   padding-bottom: 160px;
+.menu__img {
+   object-fit: cover;
+   width: 100%;
+   height: 270px;
+}
 
-   h1 {
-      font-family: 'Shrikhand', cursive;
+h1 {
+   font-family: 'Shrikhand', cursive;
+   font-size: 26px;
+   margin-left: 22px;
+   margin-top: 32px;
+
+   .card__heart {
+      .fa-regular {
+         top: 35px;
+      }
+
+      .fa-solid {
+         top: 35px;
+      }
+
+      &:hover {
+         .fa-regular {
+            top: 35px;
+         }
+
+         .fa-solid {
+            top: 35px;
+         }
+      }
    }
 }
 
+.menu {
+   z-index: 1;
+   position: relative;
+   top: -50px;
+   background-color: colors.$bg-choice;
+   border-radius: 25px 25px 0 0;
+   overflow: hidden;
+   padding-bottom: 20px;
 
-button {}
+   h2 {
+      text-transform: uppercase;
+      margin: 30px 0 12px 0px;
+
+      span {
+         border-bottom: 2px solid colors.$color-tertiary;
+         padding-bottom: 5px;
+      }
+   }
+}
+
+.menu__plat {
+   margin: 0 14px;
+
+   ul {
+      padding: 0;
+   }
+
+   li {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 1px 1px 15px colors.$shadow;
+      cursor: pointer;
+      overflow: hidden;
+      animation: menu-appear 1s;
+   }
+
+   li:hover {
+      .price-check {
+         animation: check-appear 500ms forwards;
+
+         i {
+            animation: check-rotate 500ms forwards;
+         }
+      }
+   }
+}
+
+.price-check {
+   display: flex;
+   
+   .menu__price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-weight: 700;
+      padding: 0 22px 12px 12px;
+   }
+
+   .menu__confirm {
+      background-color: colors.$color-tertiary;
+      width: 58px;
+      height: 70px;
+      border-radius: 0 15px 15px 0;
+      padding: 25px 17px;
+      margin-right: -60px;
+
+      i {
+         width: 22px;
+         height: 22px;
+         padding: 3px;
+         border-radius: 50%;
+         background-color: white;
+         color: colors.$color-tertiary;
+      }
+   }
+}
+
+h3 {
+   font-size: 18px;
+   font-weight: 600;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   padding: 12px 0 5px 12px;
+}
+
+h4 {
+   font-size: 15px;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   padding: 0 0 5px 12px;
+}
+
+
+.libelle {
+   min-width: 290px;
+}
+
+button .btn {
+   min-width: 190px;
+   padding: 5px 0;
+}
