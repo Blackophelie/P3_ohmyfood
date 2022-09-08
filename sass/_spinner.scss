@@ -2,419 +2,187 @@
 @use "typo.scss";
 @use "mixins.scss";
 
+.loader {
+   position: fixed;
+   z-index: 999;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: colors.$bg-choice;
+   animation: loading 3s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+   0% {
+      opacity: 0.9;
+   }
+   90% {
+      opacity: 0.9;
+   }
+   100% {
+      opacity: 0;
+      z-index: -1;
+   }
+}
+
+   .spinner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-fill-mode: none;
+
+      .center {
+         position: absolute;
+         z-index: 2;
+         right: -30px;
+         top: -25px;
+         width: 100px;
+         height: 100px;
+         background: colors.$color-primary;
+         box-shadow: 0px 1px 15px 15px colors.$color-tertiary;
+         border-radius: 50%;
+         animation: center 3s ease-in-out none;
+
+         i {
+            color: white;
+            font-size: 60px;
+            padding: 20px 0 0 27px;
+         }
+      }
+
+      .item {
+         position: absolute;
+         width: 30px;
+         height: 30px;
+         top: 15px;
+         left: 0;
+         right: 0;
+         margin: auto;
+         background: colors.$color-secondary;
+         box-shadow: 0px 1px 15px 5px colors.$color-tertiary;
+         border-radius: 50%;
+      }
+   }
+
+      .item-1 {
+         animation: anim-1 3s ease-in-out none 0.2s;
+         animation-fill-mode: backwards;
+
+         i {
+            color: white;
+            rotate: -45deg;
+            padding: 12px 0 0 6px;
+         }
+      }
+   
+
+
+@keyframes anim-1 {
+
+   0%,
+   60%,
+   100% {
+      transform: rotate(45deg) translateX(0px) scale(1);
+   }
+
+   10%,
+   50% {
+      transform: rotate(45deg) translateX(100px) scale(2);
+   }
+}
+
+.item-3 {
+   animation: anim-3 3s ease-in-out none 0.4s;
+   animation-fill-mode: backwards;
+
+   i {
+      color: white;
+      rotate: -135deg;
+      padding-right: 8px;
+      padding-bottom: 3px;
+   }
+}
+
+@keyframes anim-3 {
+
+   0%,
+   60%,
+   100% {
+      transform: rotate(135deg) translateX(0) scale(1);
+   }
+
+   10%,
+   50% {
+      transform: rotate(135deg) translateX(100px) scale(2);
+   }
+}
+
+.item-5 {
+   animation: anim-5 3s ease-in-out none 0.8s;
+   animation-fill-mode: backwards;
+
+   i {
+      color: white;
+      rotate: -225deg;
+      padding: 0 6px 8px 0;
+   }
+}
+
+@keyframes anim-5 {
+
+   0%,
+   60%,
+   100% {
+      transform: rotate(225deg) translateX(0) scale(1);
+   }
+
+   10%,
+   50% {
+      transform: rotate(225deg) translateX(100px) scale(2);
+   }
+}
+
+.item-7 {
+   animation: anim-7 3s ease-in-out none 1s;
+   animation-fill-mode: backwards;
+
+   i {
+      color: white;
+      rotate: 45deg;
+      padding: 4px 0 0 10px;
+   }
+}
+
+@keyframes anim-7 {
+
+   0%,
+   60%,
+   100% {
+      transform: rotate(315deg) translateX(0) scale(1);
+   }
+
+   10%,
+   50% {
+      transform: rotate(315deg) translateX(100px) scale(2);
+   }
+}
+
+@keyframes center {
+
+   0%,
+   10%,
+   90%,
+   100% {
+      transform: scale(1);
+   }
+
+   45%,
+   55% {
+      transform: scale(0.7);
+   }
+}
 
-
-// Spinner logo
-
-// * {
-//   outline: 0;
-// }
-
-// .loader {
-//   position: absolute;
-//   z-index: 999;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   background: linear-gradient(-45deg, colors.$color-tertiary 0%, colors.$color-primary 50%, colors.$color-secondary 94%);
-//   background-size: 600%;
-//   background-position: 0% 100%;
-//   -webkit-animation: gradient 7s ease-in-out infinite;
-//   animation: gradient 7s ease-in-out infinite;
-//   position: absolute;
-//   left: 0;
-// }
-
-// .spinner {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .spinner * {
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate3d(-50%, -50%, 0) rotate(0deg);
-// }
-
-// .spinner .logo {
-//   @include mixins.center;
-//   font-family: typo.$font-secondary;
-//   color: white;
-//   font-size: 70px;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   width: 180px;
-//   height: 100%;
-// }
-
-// .spinner .dots.animate .dot {
-//   -webkit-animation: loading-block 3.5s ease-in-out infinite;
-//   animation: loading-block 3.5s ease-in-out infinite;
-// }
-
-// .spinner .dots.animate .dot:after {
-//   -webkit-animation: loading-dot 3.5s ease-in-out infinite;
-//   animation: loading-dot 3.5s ease-in-out infinite;
-// }
-
-// .spinner .dots .dot {
-//   width: 300px;
-//   height: 300px;
-// }
-
-// .spinner .dots .dot:after {
-//   content: "";
-//   display: inline-block;
-//   width: 60px;
-//   height: 60px;
-//   background-color: #fff;
-//   border-radius: 50%;
-//   position: absolute;
-//   transform: scale(0.17);
-// }
-
-// .spinner .dots .dot:nth-child(1) {
-//   top: 135px;
-//   left: -200px;
-//   -webkit-animation-delay: 0s;
-//   animation-delay: 0s;
-// }
-
-// .spinner .dots .dot:nth-child(1):after {
-//   transform-origin: top right;
-//   top: 0;
-//   right: 0;
-//   -webkit-animation-delay: 0s;
-//   animation-delay: 0s;
-// }
-
-// .spinner .dots .dot:nth-child(2) {
-//   top: -150px;
-//   left: -200px;
-//   -webkit-animation-delay: 0.25s;
-//   animation-delay: 0.25s;
-// }
-
-// .spinner .dots .dot:nth-child(2):after {
-//   transform-origin: bottom right;
-//   bottom: 0;
-//   right: 0;
-//   -webkit-animation-delay: 0.25s;
-//   animation-delay: 0.25s;
-// }
-
-// .spinner .dots .dot:nth-child(3) {
-//   top: -169px;
-//   left: -89px;
-//   -webkit-animation-delay: 0.5s;
-//   animation-delay: 0.5s;
-// }
-
-// .spinner .dots .dot:nth-child(3):after {
-//   transform-origin: bottom right;
-//   bottom: 0;
-//   right: 0;
-//   -webkit-animation-delay: 0.5s;
-//   animation-delay: 0.5s;
-// }
-
-// .spinner .dots .dot:nth-child(4) {
-//   top: 120px;
-//   left: 200px;
-//   -webkit-animation-delay: 0.75s;
-//   animation-delay: 0.75s;
-// }
-
-// .spinner .dots .dot:nth-child(4):after {
-//   transform-origin: top left;
-//   top: 0;
-//   left: 0;
-//   -webkit-animation-delay: 0.75s;
-//   animation-delay: 0.75s;
-// }
-
-// .spinner .dots .dot:nth-child(5) {
-//   top: -170px;
-//   left: 200px;
-//   -webkit-animation-delay: 1s;
-//   animation-delay: 1s;
-// }
-
-// .spinner .dots .dot:nth-child(5):after {
-//   transform-origin: bottom left;
-//   bottom: 0;
-//   left: 0;
-//   -webkit-animation-delay: 1s;
-//   animation-delay: 1s;
-// }
-
-// @-webkit-keyframes loading-block {
-
-//   71.4285714286%,
-//   100% {
-//     transform: translate3d(-50%, -50%, 0) rotate(360deg);
-//   }
-// }
-
-// @keyframes loading-block {
-
-//   71.4285714286%,
-//   100% {
-//     transform: translate3d(-50%, -50%, 0) rotate(360deg);
-//   }
-// }
-
-// @-webkit-keyframes loading-dot {
-
-//   0%,
-//   71.4285714286%,
-//   100% {
-//     transform: scale(0.17);
-//   }
-
-//   35.7142857143% {
-//     transform: scale(1);
-//   }
-// }
-
-// @keyframes loading-dot {
-
-//   0%,
-//   71.4285714286%,
-//   100% {
-//     transform: scale(0.17);
-//   }
-
-//   35.7142857143% {
-//     transform: scale(1);
-//   }
-// }
-
-// @-webkit-keyframes gradient {
-//   50% {
-//     background-position: 100% 0%;
-//   }
-// }
-
-// @keyframes gradient {
-//   50% {
-//     background-position: 100% 0%;
-//   }
-// }
-
-
-
-
-
-
-
-// Spinner Text Ring
-
-// #loader {
-//    @include mixins.center;
-//    padding: 150px;
-//    position: absolute;
-//    width: 100%;
-//    height: 100%;
-//    z-index: 99;
-//    background: white;
-//    color: colors.$color-primary;
-//    height: 100%;
-//    line-height: 1.5;
-//    perspective: 40em;
-// }
-
-// .spinner {
-//    animation: tiltSpin 3s linear;
-//    flex-direction: column;
-//    justify-content: center;
-//    align-items: center;
-//    margin: auto;
-//    width: 17em;
-//    height: 17em;
-// }
-
-// .spinner,
-// .spinner__ring {
-//    transform-style: preserve-3d;
-// }
-
-// .spinner__ring {
-//    animation-name: spin;
-//    animation-duration: 3s;
-//    animation-timing-function: inherit;
-//    animation-iteration-count: inherit;
-//    font-size: 2em;
-//    position: relative;
-//    height: 3rem;
-//    width: 1.5rem;
-// }
-
-// .spinner__ring:nth-child(even) {
-//    animation-direction: reverse;
-//    color: colors.$color-secondary;
-// }
-
-// .spinner__sector {
-//    font-family: typo.$font-secondary;
-//    font-size: 25px;
-//    font-weight: 300;
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    text-align: center;
-//    transform: translateZ(7rem);
-// }
-
-// .spinner__sector,
-// .spinner__sector:empty:before {
-//    display: inline-block;
-//    width: 100%;
-//    height: 100%;
-// }
-
-// .spinner__sector:empty:before {
-//    background: linear-gradient(transparent 45%, currentColor 45% 55%, transparent 55%);
-//    content: "";
-//    color: colors.$color-tertiary;
-//    opacity: 90%;
-// }
-
-// .spinner__sector:nth-child(2) {
-//    transform: rotateY(12deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(3) {
-//    transform: rotateY(24deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(4) {
-//    transform: rotateY(36deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(5) {
-//    transform: rotateY(48deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(6) {
-//    transform: rotateY(60deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(7) {
-//    transform: rotateY(72deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(8) {
-//    transform: rotateY(84deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(9) {
-//    transform: rotateY(96deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(10) {
-//    transform: rotateY(108deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(11) {
-//    transform: rotateY(120deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(12) {
-//    transform: rotateY(132deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(13) {
-//    transform: rotateY(144deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(14) {
-//    transform: rotateY(156deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(15) {
-//    transform: rotateY(168deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(16) {
-//    transform: rotateY(180deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(17) {
-//    transform: rotateY(192deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(18) {
-//    transform: rotateY(204deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(19) {
-//    transform: rotateY(216deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(20) {
-//    transform: rotateY(228deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(21) {
-//    transform: rotateY(240deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(22) {
-//    transform: rotateY(252deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(23) {
-//    transform: rotateY(264deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(24) {
-//    transform: rotateY(276deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(25) {
-//    transform: rotateY(288deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(26) {
-//    transform: rotateY(300deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(27) {
-//    transform: rotateY(312deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(28) {
-//    transform: rotateY(324deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(29) {
-//    transform: rotateY(336deg) translateZ(7rem);
-// }
-
-// .spinner__sector:nth-child(30) {
-//    transform: rotateY(348deg) translateZ(7rem);
-// }
-
-// /* Animations */
-
-// @keyframes tiltSpin {
-//    from {
-//       transform: rotateY(0) rotateX(30deg);
-//    }
-
-//    to {
-//       transform: rotateY(1turn) rotateX(30deg);
-//    }
-// }
-
-// @keyframes spin {
-//    from {
-//       transform: rotateY(0);
-//    }
-
-//    to {
-//       transform: rotateY(1turn);
-//    }
-// }
