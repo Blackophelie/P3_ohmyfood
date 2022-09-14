@@ -3,6 +3,7 @@
 @use "mixins.scss";
 
 .loader {
+   @include mixins.flex-center;
    position: fixed;
    z-index: 999;
    width: 100%;
@@ -13,176 +14,52 @@
    animation-fill-mode: forwards;
 }
 
+.ohmyfood {
+   font-size: 54px;
+   font-family: typo.$font-secondary;
+   font-weight: bold;
+   color: colors.$color-primary;
+   letter-spacing: 2px;
+   position: relative;
+
+   &:after {
+      content: 'ohmyfood';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      animation: fill-logo 2.5s linear forwards;
+   }
+}
+
+@keyframes fill-logo {
+   0% {
+      width: 0%;
+   }
+
+   100% {
+      width: 100%;
+   }
+}
+
 @keyframes loading {
    0% {
-      opacity: 0.9;
+      opacity: 1;
    }
+
+   80% {
+      opacity: 1;
+   }
+
    90% {
-      opacity: 0.9;
+      opacity: 0.5;
    }
+
    100% {
       opacity: 0;
       z-index: -1;
    }
 }
-
-   .spinner {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-fill-mode: none;
-
-      .center {
-         position: absolute;
-         z-index: 2;
-         right: -30px;
-         top: -25px;
-         width: 100px;
-         height: 100px;
-         background: colors.$color-primary;
-         box-shadow: 0px 1px 15px 15px colors.$color-tertiary;
-         border-radius: 50%;
-         animation: center 3s ease-in-out none;
-
-         i {
-            color: white;
-            font-size: 60px;
-            padding: 20px 0 0 27px;
-         }
-      }
-
-      .item {
-         position: absolute;
-         width: 30px;
-         height: 30px;
-         top: 15px;
-         left: 0;
-         right: 0;
-         margin: auto;
-         background: colors.$color-secondary;
-         box-shadow: 0px 1px 15px 5px colors.$color-tertiary;
-         border-radius: 50%;
-      }
-   }
-
-      .item-1 {
-         animation: anim-1 3s ease-in-out none 0.2s;
-         animation-fill-mode: backwards;
-
-         i {
-            color: white;
-            rotate: -45deg;
-            padding: 12px 0 0 6px;
-         }
-      }
-   
-
-
-@keyframes anim-1 {
-
-   0%,
-   60%,
-   100% {
-      transform: rotate(45deg) translateX(0px) scale(1);
-   }
-
-   10%,
-   50% {
-      transform: rotate(45deg) translateX(100px) scale(2);
-   }
-}
-
-.item-3 {
-   animation: anim-3 3s ease-in-out none 0.4s;
-   animation-fill-mode: backwards;
-
-   i {
-      color: white;
-      rotate: -135deg;
-      padding-right: 8px;
-      padding-bottom: 3px;
-   }
-}
-
-@keyframes anim-3 {
-
-   0%,
-   60%,
-   100% {
-      transform: rotate(135deg) translateX(0) scale(1);
-   }
-
-   10%,
-   50% {
-      transform: rotate(135deg) translateX(100px) scale(2);
-   }
-}
-
-.item-5 {
-   animation: anim-5 3s ease-in-out none 0.8s;
-   animation-fill-mode: backwards;
-
-   i {
-      color: white;
-      rotate: -225deg;
-      padding: 0 6px 8px 0;
-   }
-}
-
-@keyframes anim-5 {
-
-   0%,
-   60%,
-   100% {
-      transform: rotate(225deg) translateX(0) scale(1);
-   }
-
-   10%,
-   50% {
-      transform: rotate(225deg) translateX(100px) scale(2);
-   }
-}
-
-.item-7 {
-   animation: anim-7 3s ease-in-out none 1s;
-   animation-fill-mode: backwards;
-
-   i {
-      color: white;
-      rotate: 45deg;
-      padding: 4px 0 0 10px;
-   }
-}
-
-@keyframes anim-7 {
-
-   0%,
-   60%,
-   100% {
-      transform: rotate(315deg) translateX(0) scale(1);
-   }
-
-   10%,
-   50% {
-      transform: rotate(315deg) translateX(100px) scale(2);
-   }
-}
-
-@keyframes center {
-
-   0%,
-   10%,
-   90%,
-   100% {
-      transform: scale(1);
-   }
-
-   45%,
-   55% {
-      transform: scale(0.7);
-   }
-}
-
