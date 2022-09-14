@@ -13,8 +13,7 @@
    box-shadow: 2px 2px 20px colors.$shadow;
    border-radius: 25px;
    overflow: hidden;
-   transition-property: transform;
-   transition-duration: 500ms;
+   transition: transform 500ms;
 
    &:hover {
       box-shadow: 2px 2px 20px colors.$dark-shadow;

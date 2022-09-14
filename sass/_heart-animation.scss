@@ -5,40 +5,32 @@
    cursor: pointer;
    
    .fa-regular {
-      position: absolute;
-      top: 196px;
-      right: 25px;
       font-size: 25px;
-      visibility: visible;
-      transition: visibility 500ms;
+      opacity: 1;
+      transition: opacity 500ms;
    }
 
    .fa-solid {
-      position: absolute;
-      top: 196px;
-      right: 25px;
       font-size: 25px;
       color: transparent;
       background-image: colors.$gradient;
       background-clip: text;
       -webkit-background-clip: text;
-      scale: 0;
-      visibility: hidden;
-      transition-property: visibility, scale;
-      transition-duration: 500ms;
+      transform: scale(0);
+      opacity: 0;
+      transition: opacity 500ms, transform 500ms;
    }
 
    &:hover {
       .fa-regular {
-         transition: visibility 500ms;
-         visibility: hidden;
+         transition: opacity 500ms;
+         opacity: 0;
       }
 
       .fa-solid {
-         transition-property: visibility, scale;
-         transition-duration: 500ms;
-         visibility: visible;
-         scale: 1;
+         transition: opacity 500ms, transform 500ms;
+         opacity: 1;
+         transform: scale(1);
       }
    }
 }

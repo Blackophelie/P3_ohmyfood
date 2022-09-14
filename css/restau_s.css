@@ -10,8 +10,7 @@ button {
   box-shadow: 2px 2px 20px #d3d3d3;
   padding: 16px 23px;
   cursor: pointer;
-  transition-property: transform, scale;
-  transition-duration: 500ms;
+  transition-property: transform 500ms;
 }
 button .btn {
   font-size: 18px;
@@ -21,46 +20,36 @@ button .btn {
 button:hover {
   box-shadow: 2px 2px 20px #a0a0a0;
   background: #FF79DA;
-  scale: 1.05;
-  transform: scale, background-image;
-  transition-property: transform, scale;
-  transition-duration: 500ms;
+  transform: scale(1.05), background-image;
+  transition: transform 500ms;
 }
 
 .card__heart {
   cursor: pointer;
 }
 .card__heart .fa-regular {
-  position: absolute;
-  top: 196px;
-  right: 25px;
   font-size: 25px;
-  visibility: visible;
-  transition: visibility 500ms;
+  opacity: 1;
+  transition: opacity 500ms;
 }
 .card__heart .fa-solid {
-  position: absolute;
-  top: 196px;
-  right: 25px;
   font-size: 25px;
   color: transparent;
   background-image: linear-gradient(#FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
-  scale: 0;
-  visibility: hidden;
-  transition-property: visibility, scale;
-  transition-duration: 500ms;
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 500ms, transform 500ms;
 }
 .card__heart:hover .fa-regular {
-  transition: visibility 500ms;
-  visibility: hidden;
+  transition: opacity 500ms;
+  opacity: 0;
 }
 .card__heart:hover .fa-solid {
-  transition-property: visibility, scale;
-  transition-duration: 500ms;
-  visibility: visible;
-  scale: 1;
+  transition: opacity 500ms, transform 500ms;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .card {
@@ -74,8 +63,7 @@ button:hover {
   box-shadow: 2px 2px 20px #d3d3d3;
   border-radius: 25px;
   overflow: hidden;
-  transition-property: transform;
-  transition-duration: 500ms;
+  transition: transform 500ms;
 }
 .card:hover {
   box-shadow: 2px 2px 20px #a0a0a0;
@@ -181,20 +169,69 @@ header .header__btn i {
     opacity: 1;
   }
 }
-@keyframes check-appear {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 @keyframes check-rotate {
   0% {
-    rotate: 180deg;
+    transform: rotate(180deg);
   }
   100% {
-    rotate: 0deg;
+    transform: rotate(0deg);
+  }
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  animation: loading 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.ohmyfood {
+  font-size: 54px;
+  font-family: Shrikhand, cursive;
+  font-weight: bold;
+  color: #9356DC;
+  letter-spacing: 2px;
+  position: relative;
+}
+.ohmyfood:after {
+  content: "ohmyfood";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: fill-logo 2.5s linear forwards;
+}
+
+@keyframes fill-logo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 .steps {
@@ -256,22 +293,18 @@ main {
 }
 
 h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Shrikhand", cursive;
   font-size: 26px;
-  margin-left: 22px;
-  margin-top: 32px;
+  margin: 32px 12px 0 22px;
 }
 h1 .card__heart .fa-regular {
-  top: 35px;
+  margin-right: 12px;
 }
 h1 .card__heart .fa-solid {
-  top: 35px;
-}
-h1 .card__heart:hover .fa-regular {
-  top: 35px;
-}
-h1 .card__heart:hover .fa-solid {
-  top: 35px;
+  margin-left: -37px;
 }
 
 .menu {
@@ -287,9 +320,13 @@ h1 .card__heart:hover .fa-solid {
   text-transform: uppercase;
   margin: 30px 0 12px 0px;
 }
-.menu h2 span {
-  border-bottom: 2px solid #99E2D0;
-  padding-bottom: 5px;
+.menu h2::after {
+  content: "";
+  display: flex;
+  height: 3px;
+  width: 39px;
+  background-color: #99E2D0;
+  margin-top: 7px;
 }
 
 .menu__plat {
@@ -310,7 +347,8 @@ h1 .card__heart:hover .fa-solid {
   animation: menu-appear 1s;
 }
 .menu__plat li:hover .price-check {
-  animation: check-appear 500ms forwards;
+  transition: transform 500ms;
+  transform: translateX(-100%);
 }
 .menu__plat li:hover .price-check i {
   animation: check-rotate 500ms forwards;
@@ -318,6 +356,8 @@ h1 .card__heart:hover .fa-solid {
 
 .price-check {
   display: flex;
+  transition: transform 500ms;
+  transform: translateX(0%);
 }
 .price-check .menu__price {
   display: flex;
@@ -361,7 +401,8 @@ h4 {
 }
 
 .libelle {
-  min-width: 290px;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
 button .btn {

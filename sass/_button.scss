@@ -3,7 +3,7 @@
 @use "mixins.scss";
 
 button {
-   @include mixins.center;
+   @include mixins.flex-center;
    margin: auto;
    background: linear-gradient(colors.$color-secondary, colors.$color-primary);
    border-radius: 60px;
@@ -11,8 +11,7 @@ button {
    box-shadow: 2px 2px 20px colors.$shadow;
    padding: 16px 23px;
    cursor: pointer;
-   transition-property: transform, scale;
-   transition-duration: 500ms;
+   transition-property: transform 500ms;
 
    .btn {
       font-size: 18px;
@@ -23,9 +22,7 @@ button {
    &:hover {
       box-shadow: 2px 2px 20px colors.$dark-shadow;
       background: colors.$color-secondary;
-      scale: 1.05;
-      transform: scale, background-image;
-      transition-property: transform, scale;
-      transition-duration: 500ms;
+      transform: scale(1.05), background-image;
+      transition: transform 500ms;
    }
 }
