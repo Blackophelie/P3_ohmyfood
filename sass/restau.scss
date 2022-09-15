@@ -34,9 +34,10 @@ h1 {
       .fa-regular {
          margin-right: 12px;
       }
-     .fa-solid {
+
+      .fa-solid {
          margin-left: -37px;
-     }
+      }
    }
 }
 
@@ -81,15 +82,19 @@ h1 {
       cursor: pointer;
       overflow: hidden;
       animation: menu-appear 1s;
+
       &:nth-child(1) {
          animation-delay: 0.1s;
       }
+
       &:nth-child(2) {
          animation-delay: 0.2s;
       }
+
       &:nth-child(3) {
          animation-delay: 0.3s;
       }
+
       &:nth-child(4) {
          animation-delay: 0.4s;
       }
@@ -156,7 +161,6 @@ h4 {
    padding: 0 0 5px 12px;
 }
 
-
 .libelle {
    flex-shrink: 1;
    overflow: hidden;
@@ -165,4 +169,15 @@ h4 {
 button .btn {
    min-width: 190px;
    padding: 5px 0;
+}
+
+@media screen and (min-width: 768px) {
+
+   .menu__category {
+      display: flex;
+   }
+
+   .menu__plat {
+      width: 30%;
+   }
 }
