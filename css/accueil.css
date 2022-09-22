@@ -10,9 +10,7 @@ button {
   box-shadow: 2px 2px 20px #d3d3d3;
   padding: 16px 23px;
   cursor: pointer;
-  transition-property: transform 500ms;
-}
-button .btn {
+  transition: transform 500ms;
   font-size: 18px;
   color: white;
   font-weight: 500;
@@ -20,8 +18,8 @@ button .btn {
 button:hover {
   box-shadow: 2px 2px 20px #a0a0a0;
   background: #FF79DA;
-  transform: scale(1.05), background-image;
-  transition: transform 500ms;
+  transform: scale(1.05);
+  transition: transform 500ms, background-image 500ms;
 }
 
 .card__heart {
@@ -128,6 +126,7 @@ footer ul li i {
   margin-right: 15px;
 }
 footer a {
+  display: flex;
   cursor: pointer;
   text-decoration: none;
   color: inherit;

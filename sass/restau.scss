@@ -85,15 +85,15 @@ h1 {
 
       @for $i from 1 through 4 {
          &:nth-child(4n + #{$i}) {
-            animation-delay: ($i/10)+s;
+            animation-delay: calc($i / 10)+s;
          }
       }
    }
 
    li:hover {
       .price-check {
-         transition: padding-right 500ms;
-         padding-right: 60px;
+         transition: margin-right 500ms;
+         margin-right: 60px;
 
          i {
             animation: check-rotate 500ms forwards;
@@ -105,7 +105,7 @@ h1 {
 .price-check {
    display: flex;
    transition: padding-right 500ms;
-   padding-right: -60px;
+   margin-right: -60px;
 
    .menu__price {
       display: flex;
@@ -157,9 +157,8 @@ h4 {
    overflow: hidden;
 }
 
-button .btn {
+button {
    min-width: 190px;
-   padding: 5px 0;
 }
 
 @media screen and (min-width: 768px) {

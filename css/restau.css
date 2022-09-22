@@ -10,9 +10,7 @@ button {
   box-shadow: 2px 2px 20px #d3d3d3;
   padding: 16px 23px;
   cursor: pointer;
-  transition-property: transform 500ms;
-}
-button .btn {
+  transition: transform 500ms;
   font-size: 18px;
   color: white;
   font-weight: 500;
@@ -20,8 +18,8 @@ button .btn {
 button:hover {
   box-shadow: 2px 2px 20px #a0a0a0;
   background: #FF79DA;
-  transform: scale(1.05), background-image;
-  transition: transform 500ms;
+  transform: scale(1.05);
+  transition: transform 500ms, background-image 500ms;
 }
 
 .card__heart {
@@ -128,6 +126,7 @@ footer ul li i {
   margin-right: 15px;
 }
 footer a {
+  display: flex;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -359,8 +358,8 @@ h1 .card__heart .fa-solid {
   animation-delay: 0.4s;
 }
 .menu__plat li:hover .price-check {
-  transition: padding-right 500ms;
-  padding-right: 60px;
+  transition: margin-right 500ms;
+  margin-right: 60px;
 }
 .menu__plat li:hover .price-check i {
   animation: check-rotate 500ms forwards;
@@ -369,7 +368,7 @@ h1 .card__heart .fa-solid {
 .price-check {
   display: flex;
   transition: padding-right 500ms;
-  padding-right: -60px;
+  margin-right: -60px;
 }
 .price-check .menu__price {
   display: flex;
@@ -418,9 +417,8 @@ h4 {
   overflow: hidden;
 }
 
-button .btn {
+button {
   min-width: 190px;
-  padding: 5px 0;
 }
 
 @media screen and (min-width: 768px) {

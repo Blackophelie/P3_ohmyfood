@@ -11,18 +11,16 @@ button {
    box-shadow: 2px 2px 20px colors.$shadow;
    padding: 16px 23px;
    cursor: pointer;
-   transition-property: transform 500ms;
+   transition: transform 500ms;
+   font-size: 18px;
+   color: white;
+   font-weight: 500;
 
-   .btn {
-      font-size: 18px;
-      color: white;
-      font-weight: 500;
-   }
 
    &:hover {
       box-shadow: 2px 2px 20px colors.$dark-shadow;
       background: colors.$color-secondary;
-      transform: scale(1.05), background-image;
-      transition: transform 500ms;
+      transform: scale(1.05);
+      transition: transform 500ms, background-image 500ms;
    }
 }
