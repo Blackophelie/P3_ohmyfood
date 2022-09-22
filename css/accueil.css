@@ -344,6 +344,7 @@ header .header__btn i {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
+    align-items: center;
   }
   .using #choose {
     background-color: white;
