@@ -35,7 +35,6 @@ button:hover {
   color: transparent;
   background-image: linear-gradient(#FF79DA, #9356DC);
   background-clip: text;
-  -webkit-background-clip: text;
   transform: scale(0);
   opacity: 0;
   transition: opacity 500ms, transform 500ms;
@@ -368,7 +367,7 @@ h1 .card__heart .fa-solid {
 .price-check {
   display: flex;
   transition: margin-right 500ms;
-  margin-right: -60px;
+  margin-right: 0px;
 }
 .price-check .menu__price {
   display: flex;
