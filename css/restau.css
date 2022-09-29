@@ -24,6 +24,8 @@ button:hover {
 
 .card__heart {
   cursor: pointer;
+  position: relative;
+  width: 25px;
 }
 .card__heart .fa-regular {
   font-size: 25px;
@@ -299,11 +301,12 @@ h1 {
   font-size: 26px;
   margin: 32px 12px 0 22px;
 }
-h1 .card__heart .fa-regular {
-  margin-right: 12px;
-}
-h1 .card__heart .fa-solid {
-  margin-left: -37px;
+h1 .card__heart i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -50%;
+  margin-left: -50%;
 }
 
 .menu {
@@ -376,7 +379,7 @@ h1 .card__heart .fa-solid {
   align-items: flex-end;
   font-weight: 700;
   width: 60px;
-  padding: 0 10px 4px 0;
+  padding: 0 24px 14px 0;
 }
 .price-check .menu__confirm {
   background-color: #99E2D0;

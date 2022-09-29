@@ -3,6 +3,8 @@
 
 .card__heart {
    cursor: pointer;
+   position: relative;
+   width: 25px;
 
    .fa-regular {
       font-size: 25px;
