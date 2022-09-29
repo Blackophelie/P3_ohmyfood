@@ -3,7 +3,7 @@
 
 .card__heart {
    cursor: pointer;
-   
+
    .fa-regular {
       font-size: 25px;
       opacity: 1;
@@ -15,6 +15,7 @@
       color: transparent;
       background-image: colors.$gradient;
       background-clip: text;
+      -webkit-background-clip: text;
       transform: scale(0);
       opacity: 0;
       transition: opacity 500ms, transform 500ms;

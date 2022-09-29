@@ -168,7 +168,7 @@ header .header__btn i {
   height: 100%;
   overflow: hidden;
   background-color: #f6f6f6;
-  animation: loading 2s linear;
+  animation: loading 1.5s linear;
   animation-fill-mode: forwards;
 }
 
@@ -365,6 +365,9 @@ header .header__btn i {
     width: 45%;
     margin: auto;
     margin-top: 30px;
+  }
+  .list .restaurants .card__img {
+    object-position: center;
   }
   footer {
     padding-left: 60px;
